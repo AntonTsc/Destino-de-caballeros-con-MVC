@@ -12,5 +12,14 @@ class MArma extends Conexion{
 
         return $armas;
     }
+
+    public function delArmas($id){
+        $sentencia = $this->getCon()->prepare('DELETE FROM arma WHERE id = ?');
+        $sentencia->bind_param('i', $id);
+        $sentencia->execute();
+        $sentencia->close();
+        
+        header("Location: armas.php");
+    }
 }
 ?>
