@@ -17,14 +17,29 @@
                     foreach($armas as $arma){ ?>
                         <tr>
                             <td><?=$arma['id']?></td>
-                            <td><?=$arma['daño']?></td>
+                            <td><?=$arma['dano']?></td>
                             <td><?=$arma['tipo']?></td>
-                            <td><a href="arma_delete.php?id=<?=$arma['id']?>">Eliminar</td>
+                            <td><a href="arma_delete.php?id=<?=$arma['id']?>">Eliminar</a> | <a href="arma_insert.php">Insertar</a></td>
                         </tr>
                     <?php
                     } ?>
                 </tbody>
             </table>
+        <?php
+        }
+
+        public function formArma(){ ?>
+            <form action="arma_insert.php" method="post">
+                <div>
+                    <label for="daño">Daño</label>
+                    <input type="number" id="daño" name="daño" required>
+                </div>
+                <div>
+                    <label for="tipo">Tipo</label>
+                    <input type="tipo" id="tipo" name="tipo" required>
+                </div>
+                <button type="submit">Crear</button>
+            </form>
         <?php
         }
     }

@@ -21,5 +21,12 @@ class MArma extends Conexion{
         
         header("Location: armas.php");
     }
+
+    public function insertArma($dano, $tipo){
+        $sentencia = $this->getCon()->prepare('INSERT INTO arma (dano, tipo) VALUES (?, ?)');
+        $sentencia->bind_param('is', $dano, $tipo);
+        $sentencia->execute();
+        $sentencia->close();
+    }
 }
 ?>
