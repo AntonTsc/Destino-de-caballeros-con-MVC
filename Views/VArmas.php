@@ -3,6 +3,8 @@
 
     class VArmas extends Vista{
         public function tablaArmas($armas){ ?>
+            <h1>Armas</h1>
+            <a href="arma_insert.php">Insertar</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -19,7 +21,7 @@
                             <td><?=$arma['id']?></td>
                             <td><?=$arma['dano']?></td>
                             <td><?=$arma['tipo']?></td>
-                            <td><a href="arma_delete.php?id=<?=$arma['id']?>">Eliminar</a> | <a href="arma_insert.php">Insertar</a></td>
+                            <td><a href="arma_delete.php?id=<?=$arma['id']?>">Eliminar</a> | </td>
                         </tr>
                     <?php
                     } ?>
@@ -29,14 +31,14 @@
         }
 
         public function formArma(){ ?>
-            <form action="arma_insert.php" method="post">
+            <form action="arma_insert.php" method="get">
                 <div>
-                    <label for="daño">Daño</label>
-                    <input type="number" id="daño" name="daño" required>
+                    <label for="dano">Daño</label>
+                    <input type="number" id="dano" name="dano" required>
                 </div>
                 <div>
                     <label for="tipo">Tipo</label>
-                    <input type="tipo" id="tipo" name="tipo" required>
+                    <input type="text" id="tipo" name="tipo" required>
                 </div>
                 <button type="submit">Crear</button>
             </form>

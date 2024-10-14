@@ -8,4 +8,9 @@
     $vista->inithtml();
     $vista->formArma();
     $vista->endhtml();
+
+    $dano = $_GET['dano'];
+    $tipo = $_GET['tipo'];
+
+    $mArma->insertArma($dano, $tipo);
 ?>
