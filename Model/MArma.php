@@ -18,13 +18,18 @@ class MArma extends Conexion{
         $sentencia->bind_param('i', $id);
         $sentencia->execute();
         $sentencia->close();
-        
-        header("Location: armas.php");
     }
 
     public function insertArma($dano, $tipo){
         $sentencia = $this->getCon()->prepare('INSERT INTO arma (dano, tipo) VALUES (?, ?)');
         $sentencia->bind_param('is', $dano, $tipo);
+        $sentencia->execute();
+        $sentencia->close();
+    }
+
+    public function editArma($dano, $tipo, $id){
+        $sentencia = $this->getCon()->prepare('UPDATE arma SET dano=?, tipo=? WHERE id = ?');
+        $sentencia->prepare('isi', $dano, $tipo, $id);
         $sentencia->execute();
         $sentencia->close();
     }

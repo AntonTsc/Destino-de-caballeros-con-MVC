@@ -21,7 +21,7 @@
                             <td><?=$arma['id']?></td>
                             <td><?=$arma['dano']?></td>
                             <td><?=$arma['tipo']?></td>
-                            <td><a href="arma_delete.php?id=<?=$arma['id']?>">Eliminar</a> | </td>
+                            <td><a href="arma_delete.php?id=<?=$arma['id']?>">Eliminar</a> | <a href="arma_edit.php?id=<?=$arma['id']?>">Editar</a> </td>
                         </tr>
                     <?php
                     } ?>
@@ -31,7 +31,7 @@
         }
 
         public function formArma(){ ?>
-            <form action="arma_insert.php" method="get">
+            <form action="arma_guardar.php" method="get">
                 <div>
                     <label for="dano">Daño</label>
                     <input type="number" id="dano" name="dano" required>
