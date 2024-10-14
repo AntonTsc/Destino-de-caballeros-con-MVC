@@ -1,10 +1,10 @@
 <?php
-    require_once('../Views/VArmas.php');
-
-    
-    $vista = new VArmas();
-    $vista->inithtml();
-    $vista->formArma();
-    $vista->endhtml();
+    require_once('../Model/MArma.php');
   
+    $mArma = new MArma();
+    $dano = $_GET['dano'];
+    $tipo = $_GET['tipo'];
+
+    $mArma->insertArma($dano, $tipo);
+    header('Location: armas.php');
 ?>
