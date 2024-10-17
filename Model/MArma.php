@@ -15,11 +15,10 @@ class MArma extends Conexion{
 
     public function getArmaXid($id){
         $sentencia = $this->getCon()->prepare('SELECT * FROM arma WHERE id = ?');
-        $sentencia->prepare('i', $id);
+        $sentencia->bind_param('i', $id);
         $sentencia->execute();
-        $sentencia->close();
 
-        return $arma; //copiar como el de arriba de getArmas, pero adaptarlo para solo un arma
+        return $sentencia->get_result()->fetch_assoc();
     }
 
     public function delArmas($id){

@@ -49,15 +49,15 @@
             <form action="arma_edit.php" method="get">
                 <div>
                     <label for="id">ID</label>
-                    <input type="number" id="id" name="id" value="xxxxxxx" readonly>
+                    <input type="number" id="id" name="id" value="<?=$arma['id']?>" readonly>
                 </div>
                 <div>
                     <label for="dano">Daño</label>
-                    <input type="number" id="dano" name="dano" value="xxxxxxx" required>
+                    <input type="number" id="dano" name="dano" value="<?=$arma['dano']?>" required>
                 </div>
                 <div>
                     <label for="tipo">Tipo</label>
-                    <input form="tipo" id="tipo" name="tipo" value="xxxxxxx" required>
+                    <input form="tipo" id="tipo" name="tipo" value="<?=$arma['tipo']?>" required>
                 </div>
                 <button type="submit">Modificar</button>
             </form>
