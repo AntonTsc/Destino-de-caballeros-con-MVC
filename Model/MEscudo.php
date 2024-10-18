@@ -19,5 +19,12 @@
             $sentencia->execute();
             $sentencia->close();
         }
+
+        public function insertEscudo($defensa, $tipo){
+            $sentencia = $this->getCon()->prepare("INSERT INTO escudo (defensa, tipo) VALUES (?, ?)");
+            $sentencia->bind_param("is", $defensa, $tipo);
+            $sentencia->execute();
+            $sentencia->close();
+        }
     }
 ?>
