@@ -3,7 +3,7 @@
 
     class VEscudos extends Vista{
         public function tablaEscudos($escudos){ ?>
-            <h1>Armas</h1>
+            <h1>Escudos</h1>
             <a href="xxxxxxxxxxx">Insertar</a> <!-- TODO -->
             <table class="table">
                 <thead>
@@ -21,7 +21,7 @@
                             <td><?=$escudo['id']?></td>
                             <td><?=$escudo['defensa']?></td>
                             <td><?=$escudo['tipo']?></td>
-                            <td><a href="xxxxxxxxxxxxxx">Eliminar</a> | <a href="xxxxxxxxxxxx">Editar</a> </td>
+                            <td><a href="escudo_delete.php?id=<?=$escudo['id']?>">Eliminar</a> | <a href="xxxxxxxxxxxx">Editar</a> </td>
                         </tr>
                     <?php
                     } ?>

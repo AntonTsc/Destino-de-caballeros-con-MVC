@@ -13,5 +13,11 @@
             return $escudos;
         }
 
+        public function delEscudo(){
+            $sentencia = $this->getCon()->prepare("DELETE FROM escudo WHERE id = ?");
+            $sentencia->bind_param("i", $id);
+            $sentencia->execute();
+            $sentencia->close();
+        }
     }
 ?>
