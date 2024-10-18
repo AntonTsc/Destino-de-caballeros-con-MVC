@@ -8,12 +8,12 @@
 
     //Conseguir el arma de la BBDD con la id
     $mArma = new MArma();
-    $arma = $mArma->getArmaXid($id); //Terminar codigo de esta funcion
+    $arma = $mArma->getArmaXid($id); 
 
     //Mostrar formulario con el arma
     $vista = new VArmas();
     $vista->inithtml();
-    $vista->formEditArma($arma); //Terminar codigo de este formulario, que muestra la informacion del arma seleccionada
+    $vista->formEditArma($arma);
     $vista->endhtml();
 
 ?>

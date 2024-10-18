@@ -18,7 +18,7 @@ class MArma extends Conexion{
         $sentencia->bind_param('i', $id);
         $sentencia->execute();
 
-        return $sentencia->get_result()->fetch_assoc();
+        return $sentencia->get_result()->fetch_assoc(); //Devuelve el arma
     }
 
     public function delArmas($id){
@@ -37,7 +37,7 @@ class MArma extends Conexion{
 
     public function editArma($dano, $tipo, $id){
         $sentencia = $this->getCon()->prepare('UPDATE arma SET dano=?, tipo=? WHERE id = ?');
-        $sentencia->prepare('isi', $dano, $tipo, $id);
+        $sentencia->bind_param('isi', $dano, $tipo, $id);
         $sentencia->execute();
         $sentencia->close();
     }

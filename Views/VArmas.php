@@ -4,7 +4,7 @@
     class VArmas extends Vista{
         public function tablaArmas($armas){ ?>
             <h1>Armas</h1>
-            <a href="arma_insert.php">Insertar</a>
+            <a href="arma_insertVentana.php">Insertar</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -57,7 +57,7 @@
                 </div>
                 <div>
                     <label for="tipo">Tipo</label>
-                    <input form="tipo" id="tipo" name="tipo" value="<?=$arma['tipo']?>" required>
+                    <input type="text" id="tipo" name="tipo" value="<?=$arma['tipo']?>" required>
                 </div>
                 <button type="submit">Modificar</button>
             </form>
