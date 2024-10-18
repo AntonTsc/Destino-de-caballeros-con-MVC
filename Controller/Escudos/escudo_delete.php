@@ -5,4 +5,6 @@
 
     $mEscudo = new MEscudo();
     $mEscudo->delEscudo($id);
+
+    header("Location: escudos.php");
 ?>
