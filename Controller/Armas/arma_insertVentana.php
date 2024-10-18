@@ -1,5 +1,5 @@
 <?php
-    require_once('../Views/VArmas.php');
+    require_once('../../Views/VArmas.php');
 
     $vista = new VArmas();
     $vista->inithtml();

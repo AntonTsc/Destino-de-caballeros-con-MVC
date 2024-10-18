@@ -1,6 +1,6 @@
 <?php
-    require_once('../Model/MArma.php');
-    require_once('../Views/VArmas.php');
+    require_once('../../Model/MArma.php');
+    require_once('../../Views/VArmas.php');
 
 
     //Recoger la id
