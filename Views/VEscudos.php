@@ -21,7 +21,7 @@
                             <td><?=$escudo['id']?></td>
                             <td><?=$escudo['defensa']?></td>
                             <td><?=$escudo['tipo']?></td>
-                            <td><a href="escudo_delete.php?id=<?=$escudo['id']?>">Eliminar</a> | <a href="xxxxxxxxxxxx">Editar</a> </td>
+                            <td><a href="escudo_delete.php?id=<?=$escudo['id']?>">Eliminar</a> | <a href="escudo_editVentana.php?id=<?=$escudo['id']?>">Editar</a> </td>
                         </tr>
                     <?php
                     } ?>
@@ -44,6 +44,24 @@
             </form>
         <?php
         }
-    }
 
+        public function formEditEscudo($escudo){ ?>
+            <form action="escudo_edit.php" method="get">
+                <div>
+                    <label for="id">ID</label>
+                    <input type="number" id="id" name="id" value="<?=$escudo['id']?>" readonly>
+                </div>
+                <div>
+                    <label for="defensa">Defensa</label>
+                    <input type="number" id="defensa" name="defensa" value="<?=$escudo['defensa']?>" required>
+                </div>
+                <div>
+                    <label for="tipo">Tipo</label>
+                    <input type="text" id="tipo" name="tipo" value="<?=$escudo['tipo']?>" required>
+                </div>
+                <button type="submit">Modificar</button>
+            </form>
+        <?php
+        }
+    }
 ?>
